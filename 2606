@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+vector<int> v[101];
+int vi = 0;
+bool visit[101] = {false};
+void dfs(int n){
+    visit[n] = true;
+    vi++;
+    for(int i=0;i<v[n].size();i++){
+        if(visit[v[n][i]] == false){
+            dfs(v[n][i]);
+        }
+    }
+    return;
+}
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int n,m;
+    int x,y;
+    cin >> m;
+    cin >> n;
+    for(int i=0;i<n;i++){
+        cin >> x >> y;
+        v[x].push_back(y);
+        v[y].push_back(x);
+    }
+    dfs(1);
+    cout << vi - 1 << '\n';
+    return 0;
+}
