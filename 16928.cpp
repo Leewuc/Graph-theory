@@ -22,7 +22,7 @@ int main(){
     while(!q.empty()){
         int current = q.front();
         q.pop();
-        for(int i=1;i=6;i++){
+        for(int i=1;i<=6;i++){
             int a = current + i;
             if(a >100 || visit[a] != 0){
                 continue;
