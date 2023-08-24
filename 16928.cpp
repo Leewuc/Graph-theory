@@ -34,7 +34,7 @@ int main(){
                     continue;
                 }
                 visit[snake] = visit[a]; // 방문 표시
-                q.push(snake); // 둘 중에 칸을 통해 이동한 곳
+                q.push(snake); // 둘 중 있는곳
             }
             else{
                 q.push(a); // 주사위로 이동
